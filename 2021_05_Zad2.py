@@ -37,7 +37,7 @@ def main():
 			liczbaPar = 0
 			if debugMode:
 				print ("  --- liczba: ",liczba)
-			for i in range(1,math.ceil(mozliwasuma//2)):
+			for i in range(1,math.ceil(mozliwasuma//2)+1):
 				if liczba % i == 0:				
 					if debugMode:
 						print (i,"*",liczba/i)
