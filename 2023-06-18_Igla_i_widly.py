@@ -10,25 +10,25 @@ def check_unique_chars(input_string):
 def main():
     start_time = time.time()
 
-
-    # 
-    valid_nums = []
+    # IGŁA
+    valid_iglas = []
     for i in range(32, 100):
-        num = i**2
-        if num > 999 and num < 10000:
-            multiplied = num * 4
-            if str(multiplied).count('0') == 2:
-                valid_nums.append(num)
+        igla = i**2
+        if igla > 999 and igla < 10000:
+            if check_unique_chars(str(igla)):
+                multiplied = igla * 4
+                if str(multiplied).count('0') == 2:
+                    valid_iglas.append(igla)
 
-    # Dla każdej liczby z listy sprawdzamy, czy spełnia nowe kryteria
-    for num in valid_nums:
-        num_str = str(num)
+    # WIDŁY
+    for igla in valid_iglas:
+        igla_str = str(igla)
         for i in range(32, 316):  # dla kwadratów od 10000 do 99999
-            sqr = i**2
-            sqr_str = str(sqr)
+            widly = i**2
+            widly_str = str(widly)
             # Sprawdzamy, czy liczba spełnia nowe kryteria
-            if sqr_str[1] == num_str[0] and sqr_str[3] == num_str[2] and check_unique_chars(sqr_str) and check_unique_chars(num_str):
-                print(f"Liczba {num} spełnia wszystkie kryteria IGŁA, pomnożona przez 4: {num*4}. Kwadrat WIDŁY 5-cyfrowy: {sqr}, a pierwiastek z niego to {math.sqrt(sqr)}.")
+            if widly_str[1] == igla_str[0] and widly_str[3] == igla_str[2] and check_unique_chars(widly_str):
+                print(f"Liczba {igla} spełnia wszystkie kryteria IGŁA, pomnożona przez 4: {igla*4}. Kwadrat WIDŁY 5-cyfrowy: {widly}, a pierwiastek z niego to {math.sqrt(widly)}.")
 
     
     print("--- %s seconds ---" % (time.time() - start_time))
