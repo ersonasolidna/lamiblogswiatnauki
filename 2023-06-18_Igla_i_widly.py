@@ -1,5 +1,5 @@
-# rozwiązanie Łamiblog 2023-06-18
-# wygenerowane prawie w całości przez ChatGPT-4 i lekko poprawiony
+# Rozwiązanie Łamiblog 2023-06-18 (https://penszko.blog.polityka.pl/2023/06/18/igla-i-widly/)
+# Wygenerowane w większości przez ChatGPT-4 i lekko zmodyfikowany
 
 import time
 import math
