@@ -7,6 +7,19 @@ import math
 def check_unique_chars(input_string):
     return len(input_string) == len(set(input_string))
 
+def check_stinct_digits_apartado(string, numberofdigits):
+    #nazwa funkcji na cześć użytkownika apartado, który zawuażył błąd w moim rozwiązaniu
+    digits = set()
+    
+    for char in string:
+        if char.isdigit():
+            digits.add(char)
+    
+    if len(digits) == numberofdigits:
+        return True
+    else:
+        return False
+
 def main():
     start_time = time.time()
 
@@ -27,11 +40,13 @@ def main():
             widly = i**2
             widly_str = str(widly)
             # Sprawdzamy, czy liczba spełnia nowe kryteria
-            if widly_str[1] == igla_str[0] and widly_str[3] == igla_str[2] and check_unique_chars(widly_str) and widly_str[0] != igla_str[3] and widly_str[2] != igla_str[3] and widly_str[4] != igla_str[3]:
+            if widly_str[1] == igla_str[0] and widly_str[3] == igla_str[2] and check_stinct_digits_apartado(widly_str+igla_str,7):
                 print(f"Liczba {igla} spełnia wszystkie kryteria IGŁA, pomnożona przez 4: {igla*4}. Kwadrat WIDŁY 5-cyfrowy: {widly}, a pierwiastek z niego to {math.sqrt(widly)}.")
 
     
     print("--- %s seconds ---" % (time.time() - start_time))
-
+    print ()
+    
 if __name__ == "__main__":
     main() 
+
