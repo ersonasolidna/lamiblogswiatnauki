@@ -27,7 +27,7 @@ def main():
             widly = i**2
             widly_str = str(widly)
             # Sprawdzamy, czy liczba spełnia nowe kryteria
-            if widly_str[1] == igla_str[0] and widly_str[3] == igla_str[2] and check_unique_chars(widly_str):
+            if widly_str[1] == igla_str[0] and widly_str[3] == igla_str[2] and check_unique_chars(widly_str) and widly_str[0] != igla_str[3] and widly_str[2] != igla_str[3] and widly_str[4] != igla_str[3]:
                 print(f"Liczba {igla} spełnia wszystkie kryteria IGŁA, pomnożona przez 4: {igla*4}. Kwadrat WIDŁY 5-cyfrowy: {widly}, a pierwiastek z niego to {math.sqrt(widly)}.")
 
     
