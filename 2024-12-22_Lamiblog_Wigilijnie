@@ -1,0 +1,59 @@
+# Łamiblog 2024-12-22 "Wigilijnie" https://penszko.blog.polityka.pl/2024/12/22/wigilijnie/
+# Jest jedno rozwiązanie: 7606564 = 271663 * 28
+
+import time
+import math
+
+pierwsze = ['2','3','5','7']
+kwadraty = ['0','1','4','9']
+notkwnotpi = ['6','8']
+
+def czy_kwadrat(n: int) -> bool:
+    """
+    Sprawdza, czy liczba n jest kwadratem liczby naturalnej.
+    Zwraca True, jeśli n jest kwadratem, w przeciwnym razie False.
+    """
+    if n < 0:
+        # Liczby ujemne nie mogą być kwadratami liczb naturalnych
+        return False
+    
+    # Obliczamy całkowity pierwiastek kwadratowy n
+    pierwiastek = math.isqrt(n)  # dostępne od Pythona 3.8
+    return pierwiastek * pierwiastek == n
+
+def main():
+
+    i = 0
+    start_time = time.time()
+    for mno in range(220332,779888):
+        if str(mno)[0] in pierwsze:
+            if str(mno)[1] in pierwsze:
+                 if str(mno)[2] in kwadraty:
+                    if str(mno)[3] in notkwnotpi:
+                        if str(mno)[4] in notkwnotpi:
+                            if str(mno)[5] in pierwsze:
+                                for mnk in range(26,79):
+                                    if str(mnk)[0] in pierwsze:
+                                        if str(mnk)[1] in notkwnotpi:
+                                            wigilia = mno*mnk
+                                            podsuma1 = int(str(mnk)[1])*mno
+                                            podsuma2 = int(str(mnk)[0])*mno
+                                            if str(wigilia)[0] in pierwsze:
+                                                if str(wigilia)[1]  in notkwnotpi:
+                                                    if str(wigilia)[2]  in kwadraty:
+                                                        if str(wigilia)[3]  in notkwnotpi:
+                                                            if str(wigilia)[4] in pierwsze:
+                                                                if str(wigilia)[5]  in notkwnotpi:
+                                                                    if str(wigilia)[6]  in kwadraty:
+                                                                        if czy_kwadrat(wigilia):
+                                                                            i = i + 1
+                                                                            print("Działanie: ",mno,"*",mnk,"=",wigilia)
+                                                                            print("Podsumy:", podsuma1, podsuma2)
+                                                                            print("Pierwiastek z",wigilia,"=",math.isqrt(wigilia))
+    print(i)
+    print("--- %s seconds ---" % (time.time() - start_time))
+    
+
+
+if __name__ == "__main__":
+    main()
