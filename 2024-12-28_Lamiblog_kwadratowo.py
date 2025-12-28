@@ -1,4 +1,4 @@
-# Łamiblog 2024-12-28 "Kwadratowo" https://penszko.blog.polityka.pl/2024/12/22/wigilijnie/
+# Łamiblog 2024-12-28 "Kwadratowo"https://blog.polityka.pl/penszko/2024/12/28/kwadratowo-4/
 # Jest jedno rozwiązanie:
 # 4 3 8
 # 7 6 2
@@ -37,4 +37,5 @@ def main():
     print("--- %s seconds ---" % (time.time() - start_time))
     
 if __name__ == "__main__":
+
     main()
